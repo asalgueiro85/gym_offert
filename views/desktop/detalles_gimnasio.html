@@ -1,0 +1,480 @@
+<div ng-include="'views/desktop/partial/main_header.html'"></div>
+
+<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 filter-menu marT70">
+    <div id="select-city" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padL0">
+
+        <select id="select-city-select" class="form-control js-example-data-array" style="">
+            <option value=""></option>
+            <!--<option value="Madrid">Madrid</option>-->
+            <!--<option value="Barcelona">Barcelona</option>-->
+            <!--<option value="Sevilla">Sevilla</option>-->
+            <!--<option value="Valencia">Valencia</option>-->
+        </select>
+
+    </div>
+    <div id="select-barrios" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padL0">
+
+        <select id="select-barrios-select" class="form-control js-example-basic-single" style="">
+            <option value=""></option>
+            <option value="Barrio1">Barrio1</option>
+            <option value="Barrio2">Barrio2</option>
+            <option value="Barrio4">Barrio3</option>
+            <option value="Barrio5">Barrio4</option>
+        </select>
+
+    </div>
+    <div id="select-activity" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padL0">
+
+        <select id="select-activity-select" class="form-control js-example-basic-single" style="">
+            <option value=""></option>
+            <option value="Actividad1">Actividad1</option>
+            <option value="Actividad2">Actividad2</option>
+            <option value="Actividad3">Actividad3</option>
+            <option value="Actividad4">Actividad4</option>
+        </select>
+
+    </div>
+    <div id="select-gym" class="col-lg-3 col-md-3 col-xs-3 padL0">
+
+        <select id="select-gym-select" class="form-control js-example-basic-single" style="">
+            <option value=""></option>
+            <option value="Gimnasio1">Gimnasio1</option>
+            <option value="Gimnasio2">Gimnasio2</option>
+            <option value="Gimnasio3">Gimnasio3</option>
+            <option value="Gimnasio4">Gimnasio4</option>
+        </select>
+
+    </div>
+</div>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 padLR0 marLR marT50">
+    <div id="brother-map-gym" class="col-lg-7 col-md-7 col-sm-7 col-xs-7 brother-map-city">
+
+        <div class="row col-sm-12 col-lg-12 col-md-12 col-xs-12 padLR0 marLR"
+             style="overflow-y: auto;overflow-x: hidden;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padB10">
+                <span ng-repeat="myBreadCrumbs in breadCrumb" ui-sref="{{myBreadCrumbs.dir}}" class="breadCrumbs">{{myBreadCrumbs.text}} {{myBreadCrumbs.city}} <span
+                        ng-if="!$last"> > </span> </span>
+            </div>
+            <div id="brother-map-gym-container"
+                 class="row col-sm-12 col-lg-12 col-md-12 col-xs-12 padLR0 marLR brother-map-city-container"
+                 style="">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div-enc">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padLR0 color-27C6F0 fs-18">
+                        <span class="">Gimnasio </span>
+                <span class=" ">
+                   <strong ng-bind="gymOrigim"></strong></span>
+                    </div>
+                </div>
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 padLR0 marLR">
+                    <div class="col-lg-8 col-md-8 col-sm-8 padLR0">
+                        <div ng-hide="video == 1"  class="" id="swiper-gym">
+                            <div class="swiper-wrapper"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-prev" id="prev-swiper-gym"></div>
+                            <div class="swiper-button-next" id="next-swiper-gym"></div>
+                        </div>
+                        <div ng-hide="video != 1" class="">
+                            <div id="videocontrol">
+                                <a id="play-pause" class="play">
+                                    <img src="img/video_pause.png"/>
+                                </a>
+                            </div>
+                            <video id="video-gym" class="video-gym" src="media/video2.mp4" style="width: 100%;"></video>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 padLR0 ">
+                        <div class="row col-lg-12 col-md-12 col-sm-12 padL20 padR5 marLR">
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-center padLR0 ">
+                                <div ng-class="{divbuttonactive : activeValue === 'gym'}" ng-click="changeInfo('gym')"
+                                     class="div-button">
+                                    <!--<div class="">-->
+                                    <!--<span class="icon-ofertas"></span>-->
+                                    <!--</div>-->
+                                    <div class="">
+                                        <span class="">Sobre el Gym</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-center padLR0 ">
+                                <div ng-class="{divbuttonactive : activeValue === 'video'}"
+                                     ng-click="changeInfo('video')" class=" div-button">
+                                    <div class="">
+                                        <span class="">{{videoLabel}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-center padLR0 marT5">
+                                <div ng-class="{divbuttonactive : activeValue === 'activity'}"
+                                     ng-click="changeInfo('activity')" class=" div-button">
+                                    <div class="">
+                                        <span class="">Actividades</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-center padLR0 marT5">
+                                <div ng-class="{divbuttonactive : activeValue === 'services'}"
+                                     ng-click="changeInfo('services')" class="div-button">
+                                    <div class="">
+                                        <span class="">Servicios</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-center padLR0 marT5">
+                                <div ng-class="{divbuttonactive : activeValue === 'buildings'}"
+                                     ng-click="changeInfo('buildings')" class="div-button">
+                                    <div class="">
+                                        <span class="">Instalaciones</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-center padLR0 marT5">
+                                <div ng-class="{divbuttonactive : activeValue === 'horario'}"
+                                     ng-click="changeInfo('horario')" class="div-button">
+                                    <div class="">
+                                        <span class="">Horarios</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 include-content">
+                            <div ng-include="'views/desktop/partial/gimnasio_actividades.html'"></div>
+                            <div ng-include="'views/desktop/partial/gimnasio_gym.html'"></div>
+                            <div ng-include="'views/desktop/partial/gimnasio_horario.html'"></div>
+                            <div ng-include="'views/desktop/partial/gimnasio_instalaciones.html'"></div>
+                            <div ng-include="'views/desktop/partial/gimnasio_servicios.html'"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div-enc">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padLR0 color-27C6F0">
+                        <span class="">Precios y ofertas del gimnasio </span>
+                <span class=" ">
+                   <strong ng-bind="gymOrigim"></strong></span>
+                    </div>
+                </div>
+
+                <div ng-repeat="oferta in gimnasio.ofertas"
+                     class="col-lg-12 col-md-12 col-sm-12 padL0 brother-map-city-container">
+                    <div class="col-lg-12 col-md-12 col-sm-12 div-repeat-offert padT10 padLR0 brother-map-city-container">
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 padL5 padR0">
+                        <img class="img-gym-detail" src="img/testing/{{oferta.img}}">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <div class="offer-name">
+                            <strong> <span class="">{{oferta.nombre}}</span> </strong>
+
+                        </div>
+                        <div class="text-justify">
+                            <p class="offer-text">{{oferta.text}}</p>
+                        </div>
+                        <div class="btn button-cond text-left">
+                                <span ng-hide="span_conditions_show == $index" ng-click="showConditions($index)"
+                                      class="">Condiciones</span>
+                            <span ng-hide="span_conditions != $index" ng-click="hideConditions($index)"
+                                  class="">Ocultar</span>
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 padLR0">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div-price">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 padL0 padR5 marT7 text-right">
+                                <span class="tachado">
+                                {{oferta.old_price}} &euro;
+                            </span>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 padLR0 text-left">
+
+                                <span class="fs-24 color-0cacf5">
+                                /
+                            </span>
+                                <strong>
+                            <span class="fs-24 color-ff5821">
+                                {{oferta.new_price}} &euro;
+                            </span>
+                                </strong>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <span class="fs-10">
+                            {{oferta.info}}
+                        </span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padLR0 text-center">
+                            <button ng-click="ofertaId(oferta.id)" data-toggle="modal" data-target="#myModal" class="btn button-cupon">
+                                Descargar cup&oacute;n
+                            </button>
+                        </div>
+
+                            <!--<div ng-click="ofertaId(oferta.id)" data-toggle="modal" data-target="#myModal"-->
+                                 <!--class="cupon-circular">-->
+                                <!--<div class="">-->
+                            <!--<span class="icon-ofertas">-->
+
+                            <!--</span>-->
+                                <!--</div>-->
+                                <!--<div class="">-->
+                                    <!--<span class="">Cup&oacute;n</span>-->
+                                <!--</div>-->
+
+                            <!--</div>-->
+                    </div>
+                    <div ng-hide="conditions != $index"
+                         class="col-lg-12 col-md-12 col-sm-12 text-justify padT10 div-cond">
+                        <div class="">
+                            <p class="offer-text">{{oferta.condiciones}}</p>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row col-sm-12 col-md-12 col-sm-12 col-xs-12  text-center padLR0 marLR footer-container">
+
+                    <div class="col-sm-2 col-lg-2 col-md-2 col-xs-2 padLR0">
+                        <a class="logo-foo" ui-sref="frontend"><img class="logo-foo" src="img/logo_temp.png"
+                                                                    style=""></a>
+                    </div>
+                    <div class="col-sm-10 col-lg-10 col-md-10 col-xs-10 padLR0">
+                        <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 padT15 text-center">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="nuestra-mision">Nuestra misi&oacute;n</span>
+                        </div>
+                        <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 padT15 text-center">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="preguntas-frecuentes">Preguntas frecuentes</span>
+                        </div>
+                        <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 padT15 text-center">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="politica-de-privacidad">Pol&iacute;tica de privacidad</span>
+                        </div>
+                        <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 text-left ">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="condiciones-generales-de-contratacion">Condiciones generales &nbspde contrataci&oacute;n</span>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-lg-5 col-lg-5 col-md-5 col-xs-5 map-city padL0">
+        <div id="map-gym" class="" style="width: 100%;height: 100%"></div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <!--<div class="modal-header">-->
+                <button type="button" class="close button-modal" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                </button>
+                <!--</div>-->
+                <div class="modal-body text-center padLR0">
+                    <div class="fs-24 color-00afff">
+                        <span class="">Genial,</span>
+                    </div>
+                    <div class="fs-20 color-00afff">
+                        <span class="">cuando vayas al gym:</span>
+                    </div>
+                    <div class="color-blue padT5">
+                        <span class="">Presentar el cupon que te enviamos</span>
+                    </div>
+                    <div class="color-blue">
+                        <span class="">para disfrutar la oferta</span>
+                    </div>
+                    <form role="form" class="form-modal" ng-submit="loadCupon()">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Nombre y Apellidos">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Telefono">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-modal btn-modal">Enviarme Cup&oacute;n
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+
+                    <div class="padT10 fs-18">
+                        <span class="">As&iacute de f&aacutecil, as&iacute de simple. :)</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content modal-data-content">
+                <!--<div class="modal-header">-->
+                <button type="button" class="close button-modal" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                </button>
+                <div class="text-center padT10 marB15">
+                    <div class="circular-modal">
+                        <span class="icon-ofertas"></span>
+                    </div>
+                    <div class="color-01aafd fs-16 padT10">
+                        <span class="">
+                            Te hemos enviado el cup&oacute;n a tu correo
+                        </span>
+                    </div>
+                </div>
+
+                <!--</div>-->
+                <div class="modal-body col-lg-12 col-md-12 col-sm-12 text-center padLR0 contenidos">
+                    <div class="col-lg-6 col-md-6 col-sm-6 div-modal-left tc-666666 padT15 columna1">
+                        <div class="col-lg-2 col-md-2 col-sm-2 text-center marT10">
+                            <span class="icon-ofertas"></span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 padL0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0 fs-12">
+                                <span>Gimnasio</span>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0 color-01aafd fs-16 marT-5">
+                                <span><strong>nombre Gimnasio</strong> </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+                            <span class="icon-ofertas"></span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 padL0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0">
+                                <span class="fs-10">direccion del Gimnasio</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 text-center padT15">
+                            <span class="icon-ofertas"></span>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 padL0 padT15">
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0">
+                                <span>Datos personales</span>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0 color-01aafd fs-16 marT-5">
+                                <span>nombre</span>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0 marT-10">
+                                <span class="color-01aafd fs-10">correo</span>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0 marT-10">
+                                <span class="color-blue fs-10">telefono</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+                            <!--<span class="icon-ofertas"></span>-->
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 padL0 padT15">
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0">
+                                <span>Condiciones</span>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 padL0 fs-10 text-justify">
+                                <p>parrafo de las Condiciones asd sda sd sad asd asd as d asd as d asd a sd as das d
+                                    sadasdasd as dsa d sad as ds ad asd asd asd asd asd sad.</p>
+                            </div>
+                        </div>
+
+                        <!--<div class="col-lg-12">-->
+                        <!--<div class="btn col-lg-5 col-lg-offset-2 btn-print">-->
+                        <!--<div class="row col-lg-12 padLR0 marLR">-->
+                        <!--<div class="col-lg-2 marT10">-->
+                        <!--<span class="icon-ofertas"></span>-->
+                        <!--</div>-->
+                        <!--<div class="col-lg-8 padLR0">-->
+                        <!--<div class="col-lg-12">-->
+                        <!--<span class="">Imprimir</span>-->
+                        <!--</div>-->
+                        <!--<div class="col-lg-12">-->
+                        <!--<span class="">Cup&oacute;n</span>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center padT15 tc-666666 columna1">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <span>C&oacute;digo cup&oacute;n </span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 fs-24 tc-000000">
+                            <span><strong>AS4RFTYY</strong> </span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 padT20 ">
+                            <span>Descripci&oacute;n de la oferta</span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 fs-24 tc-000000 marT-5">
+                            <span><strong>3 MESES</strong> </span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 marT-5">
+                            <strong><span>de acceso completo </span></strong>
+                        </div>
+                        <div class="col-lg-12 padT20">
+                            <span>Precio</span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 fs-24 tc-000000 marT-5">
+                            <strong><span>35 &euro; </span></strong>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 marT-5">
+                            <span>(a pagar en el gimnasio)</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 border-rigth">
+
+                        <div class="col-lg-5 col-md-5 col-sm-5 btn btn-print">
+                            <div class="col-lg-2 col-md-2 col-sm-2 marT10">
+                                <span class="icon-ofertas"></span>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 padLR0">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <span class="">Imprimir</span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <span class="">Cup&oacute;n</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div ng-click="functionModal()" class="col-lg-5 col-md-5 col-sm-5 btn btn-ok">OK</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!--<div>-->
+                    <!--<button type="button" class="btn btn-primary btn-modal btn-modal">Save changes</button>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,259 @@
+<!--<div ng-include="'views/desktop/partial/main_header.html'"></div>-->
+
+
+
+
+
+<div class="row col-lg-12 col-sm-12 col-md-12 padLR0 marLR">
+    <nav class="navbar marB0 video-nav">
+        <div class="navbar-header header-container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a ui-sref="frontend"><img class="logo-app" src="img/logo_temp.png" style=""></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse div-menu">
+            <ul class="nav navbar-nav app-menu">
+                <li class="active padR50"><span class="app-link-front"
+                                                ui-sref="como-funciona">&#191;C&oacute;mo funciona&#63;</span></li>
+                <li class="padR50"><span class="app-link-front" ui-sref="area-gimnasios">Area gimnasios</span>
+                </li>
+                <li class=""><span class="app-link-front"
+                                   ui-sref="atencion-cliente">Atenci&oacute;n al cliente</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <video src="media/video2.mp4" autoplay style="width: 100%;"></video>
+    <div class="row col-lg-12 col-sm-12 col-md-12 col-sm-12 text-center div-video">
+        <div class="">
+            <span class="span-video"><strong>TU GIMNASIO AL MEJOR PRECIO</strong></span>
+        </div>
+        <div class="">
+            <span class="fs-18">Descarga cupones de oferta de hasta un 70%</span>
+        </div>
+
+        <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 input-group padT30">
+
+            <select id="select-city-frontend" class="form-control js-example-data-array" style="">
+                <option value=""></option>
+            </select>
+            <span class="input-group-addon">Buscar</span>
+
+        </div>
+
+
+        <div class="col-lg-12 col-md-12 col-sm-12 fs-24 padT60">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="">
+                    <i class="icon-ofertas"></i>
+                </div>
+                <div class="marT-20">
+                    <span class="fs-12"><strong>OFERTAS</strong></span>
+                </div>
+                <div class="">
+                    <span class="span-ofertas"><strong>1850</strong></span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="">
+                    <i class="icon-usuarios"></i>
+                </div>
+                <div class="marT-20">
+                    <span class="fs-12"><strong>USUARIOS</strong></span>
+                </div>
+                <div class="">
+                    <span class="span-ofertas"><strong>400.000</strong></span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="">
+                    <i class="icon-gimnasios"></i>
+                </div>
+                <div class="marT-20">
+                    <span class="fs-12"><strong>GIMNASIOS</strong></span>
+                </div>
+                <div class="">
+                    <span class="span-ofertas"><strong>850</strong></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row col-lg-12 col-md-12 col-sm-12 mpLR0">
+        <div id="brother-map" class="col-lg-7 col-md-7 col-sm-7 padLR0 marT20">
+            <div class="col-lg-6 col-md-6 col-sm-6  div-img-up padL20">
+
+                <div class="city-content text-center col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-2 col-md-2 col-sm-2 fs-20 padT10">
+                        <i class="icon-gimnasios"></i>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 padL0 text-left ">
+                        <div class="" style="margin-top: 5px; margin-bottom: -5px;">
+                            <span class="">Gimnasios</span>
+                        </div>
+                        <div class="">
+                            <span class="span-city"><strong>Madrid</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-left fs-20 padT10">
+                        <i class="icon-ubicacion"></i>
+                        <span class="">68</span>
+                    </div>
+                    <div class="city-content-back col-lg-11 col-md-11 col-sm-11" style="bottom: 10px;"></div>
+                </div>
+
+                <img class="city-img" src="img/madrid.jpg" ng-class="route == 'login' ? 'selected' : ''" ui-sref="gimnasios-ciudades({city: 'Madrid'})">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 div-img-up padR20 padL10">
+                <div class="city-content text-center col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-2 col-md-2 col-sm-2 fs-20 padT10">
+                        <i class="icon-gimnasios"></i>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 padL0 text-left ">
+                        <div class="" style="margin-top: 5px; margin-bottom: -5px;">
+                            <span class="">Gimnasios</span>
+                        </div>
+                        <div class="">
+                            <span class="span-city"><strong>Barcelona</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-left fs-20 padT10">
+                        <i class="icon-ubicacion"></i>
+                        <span class="">68</span>
+                    </div>
+                    <div class="city-content-back col-lg-11 col-md-11 col-sm-11" style="bottom: 10px;"></div>
+                </div>
+                <img class="city-img" src="img/barcelona.jpg" ng-class="route == 'login' ? 'selected' : ''" ui-sref="gimnasios-ciudades({city: 'Barcelona'})">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6  div-img-down padL20 padR10">
+                <div class="city-content text-center col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-2 fs-20 padT10">
+                        <i class="icon-gimnasios"></i>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 padL0 text-left ">
+                        <div class="" style="margin-top: 5px; margin-bottom: -5px;">
+                            <span class="">Gimnasios</span>
+                        </div>
+                        <div class="">
+                            <span class="span-city"><strong>Sevilla</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-left fs-20 padT10">
+                        <i class="icon-ubicacion"></i>
+                        <span class="">68</span>
+                    </div>
+                    <div class="city-content-back col-lg-11 col-md-11 col-sm-11" style="bottom: 0px;"></div>
+                </div>
+                <img class="city-img" src="img/sevilla.jpg" ng-class="route == 'login' ? 'selected' : ''" ui-sref="gimnasios-ciudades({city: 'Sevilla'})">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 div-img-down padR20">
+                <div class="city-content text-center col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-2 col-md-2 col-sm-2 fs-20 padT10">
+                        <i class="icon-gimnasios"></i>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 padL0 text-left ">
+                        <div class="" style="margin-top: 5px; margin-bottom: -5px;">
+                            <span class="">Gimnasios</span>
+                        </div>
+                        <div class="">
+                            <span class="span-city"><strong>Valencia</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-left fs-20 padT10">
+                        <i class="icon-ubicacion"></i>
+                        <span class="">68</span>
+                    </div>
+                    <div class="city-content-back col-lg-11 col-md-11 col-sm-11" style="bottom: 0px;"></div>
+                </div>
+                <img class="city-img" src="img/valencia.jpg" ng-class="route == 'login' ? 'selected' : ''" ui-sref="gimnasios-ciudades({city: 'Valencia'})">
+            </div>
+        </div>
+        <div  class="col-lg-5 col-md-5 col-sm-5 padT20 padL0" style="">
+            <div id="map" class="" style="width: 100%;height: 100%"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row col-lg-12 col-md-12 col-sm-12 bar-container text-center marT20 marB20">
+    <span class="fs-24">Ofertas de gimnasios a&#241adidos recientemente</span>
+</div>
+
+<!--slick prueba-->
+<div class="row col-lg-12 col-md-12 col-sm-12 slick_carousel padL50 padR50 marLR">
+
+    <div ng-mouseenter="logMouseEvent($event)" ng-mouseleave="logMouseEvent($event)" class="" id="swiper-container0">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev0"></div>
+        <div class="swiper-button-next" id="swiper-button-next0"></div>
+    </div>
+    <div class="" id="swiper-container1">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev1"></div>
+        <div class="swiper-button-next" id="swiper-button-next1"></div>
+    </div>
+    <div class="" id="swiper-container2">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev2"></div>
+        <div class="swiper-button-next" id="swiper-button-next2"></div>
+    </div>
+    <div class="" id="swiper-container3">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev3"></div>
+        <div class="swiper-button-next" id="swiper-button-next3"></div>
+    </div>
+    <div class="" id="swiper-container4">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev4"></div>
+        <div class="swiper-button-next" id="swiper-button-next4"></div>
+    </div>
+    <div class="" id="swiper-container5">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev5"></div>
+        <div class="swiper-button-next" id="swiper-button-next5"></div>
+    </div>
+    <div class="" id="swiper-container6">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev6"></div>
+        <div class="swiper-button-next" id="swiper-button-next6"></div>
+    </div>
+    <div class="" id="swiper-container7">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev7"></div>
+        <div class="swiper-button-next" id="swiper-button-next7"></div>
+    </div>
+    <div class="" id="swiper-container8">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev" id="swiper-button-prev8"></div>
+        <div class="swiper-button-next" id="swiper-button-next8"></div>
+    </div>
+
+
+</div>
+
+
+<div ng-include="'views/desktop/partial/main_footer.html'"></div>

@@ -1,0 +1,138 @@
+
+
+.span-video-mobile {
+    /*border-bottom: solid 1px #ffffff;*/
+    /*border-top: solid 1px #ffffff;*/
+    /*padding-bottom: 3px;*/
+    /*padding-top: 3px;*/
+    font-size: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.span-video-mobile-2 {
+    /*border-bottom: solid 1px #ffffff;*/
+    /*border-top: solid 1px #ffffff;*/
+    /*padding-bottom: 3px;*/
+    /*padding-top: 3px;*/
+    font-size: 42px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.div-video-mobile {
+    position: absolute;
+    /*padding-top: 60px;*/
+    top: 50px;
+    color: #ffffff;
+
+}
+
+@media (max-width: 485px) {
+    .span-video-mobile {
+
+        font-size: 32px;
+
+    }
+}
+
+@media (max-width: 485px) {
+    .span-video-mobile-2 {
+
+        font-size: 20px;
+
+    }
+}
+
+.div-img-mobile {
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.div-img-last {
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+}
+
+.city-content-back-mobile {
+    height: 50px;
+    position: absolute;
+    background-color: #00a1b5;
+    opacity: 0;
+    padding-left: 0px;
+}
+
+.div-img-movile:hover .city-content-back-mobile {
+     opacity: 0.5;
+     transition: all 1s ease 0s;
+ }
+
+.div-img-last:hover .city-content-back-mobile {
+    opacity: 0.5;
+    transition: all 1s ease 0s;
+}
+
+.colorB{
+    color: #0083c7 !important;
+}
+
+.app-link-mobile:hover {
+    color: #0083c7;
+    cursor: pointer;
+}
+
+.icon-map-mobile {
+    height: 25px;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.header-container-mobile {
+    height: 60px;
+    /*border-bottom: solid 2px #ff860a;*/
+}
+
+.logo-app-mobile {
+    height: 40px;
+    width: 75px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+@media (min-width: 485px) {
+    .logo-app-mobile {
+
+        height: 60px;
+        width: 95px;
+
+    }
+}
+
+.hamburguesa-mobile{
+
+    color: #0083c7 !important;
+    font-size: 25px;
+}
+
+.app-link-mobile:hover {
+    color: #0083c7;
+    cursor: pointer;
+}
+
+.menu-mobile{
+    font-size: 16px;
+}
+
+.separador{
+    border: 1px solid #0083c7;
+    height: 2px;
+    width: 70%;
+}

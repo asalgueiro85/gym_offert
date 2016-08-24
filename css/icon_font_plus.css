@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon_plus.eot?clg7vo');
+    src:    url('fonts/icomoon_plus.eot?clg7vo#iefix') format('embedded-opentype'),
+        url('fonts/icomoon_plus.ttf?clg7vo') format('truetype'),
+        url('fonts/icomoon_plus.woff?clg7vo') format('woff'),
+        url('fonts/icomoon_plus.svg?clg7vo#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-actividadesoff:before {
+    content: "\e900";
+}
+.icon-actividadeson:before {
+    content: "\e901";
+}
+.icon-barrioon:before {
+    content: "\e902";
+}
+.icon-barriosoff:before {
+    content: "\e903";
+}
+.icon-compartir:before {
+    content: "\e904";
+}
+.icon-gimnasiosoff:before {
+    content: "\e905";
+}
+.icon-gimnasioson:before {
+    content: "\e906";
+}
+.icon-localidadon:before {
+    content: "\e907";
+}
+.icon-localidadesoff:before {
+    content: "\e908";
+}
+

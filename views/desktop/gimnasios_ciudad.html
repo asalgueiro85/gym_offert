@@ -1,0 +1,123 @@
+<div ng-include="'views/desktop/partial/main_header.html'"></div>
+
+<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 filter-menu marT70" >
+    <div id="select-city" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padL0">
+
+        <select id="select-city-select" class="form-control js-example-data-array" style="">
+            <option value=""></option>
+            <!--<option value="Madrid">Madrid</option>-->
+            <!--<option value="Barcelona">Barcelona</option>-->
+            <!--<option value="Sevilla">Sevilla</option>-->
+            <!--<option value="Valencia">Valencia</option>-->
+        </select>
+
+    </div>
+    <div id="select-barrios" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padL0">
+
+        <select id="select-barrios-select" class="form-control js-example-basic-single" style="">
+            <option value=""></option>
+            <option value="Barrio1">Barrio1</option>
+            <option value="Barrio2">Barrio2</option>
+            <option value="Barrio4">Barrio3</option>
+            <option value="Barrio5">Barrio4</option>
+        </select>
+
+    </div>
+    <div id="select-activity" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 padL0">
+
+        <select id="select-activity-select" class="form-control js-example-basic-single" style="">
+            <option value=""></option>
+            <option value="Actividad1">Actividad1</option>
+            <option value="Actividad2">Actividad2</option>
+            <option value="Actividad3">Actividad3</option>
+            <option value="Actividad4">Actividad4</option>
+        </select>
+
+    </div>
+    <div id="select-gym" class="col-lg-3 col-md-3 col-xs-3 padL0">
+
+        <select id="select-gym-select" class="form-control js-example-basic-single" style="">
+            <option value=""></option>
+            <option value="Gimnasio1">Gimnasio1</option>
+            <option value="Gimnasio2">Gimnasio2</option>
+            <option value="Gimnasio3">Gimnasio3</option>
+            <option value="Gimnasio4">Gimnasio4</option>
+        </select>
+
+    </div>
+</div>
+<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 padLR0 marLR marT50">
+    <div id="brother-map-city" class="col-lg-7 col-md-7 col-sm-7 col-xs-7 brother-map-city">
+
+        <div class="row col-sm-12 col-lg-12 col-md-12 col-xs-12 padLR0 marLR" style="overflow-y: auto;overflow-x: hidden;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padB10 ">
+            <span ng-repeat="myBreadCrumbs in breadCrumb" ui-sref="{{myBreadCrumbs.dir}}" class="breadCrumbs">{{myBreadCrumbs.text}} {{myBreadCrumbs.city}} <span ng-if="!$last"> > </span> </span>
+        </div>
+        <div id="brother-map-city-container" class="row col-sm-12 col-lg-12 col-md-12 col-xs-12 padLR0 marLR brother-map-city-container"
+             style="">
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div-enc">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padLR0 padT10 color-27C6F0 fs-18">
+                    <span class="">Ofertas de gimnasios en </span>
+                <span class=" ">
+                   <strong ng-bind="frompage"></strong></span>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div-gym-data text-center">
+                        <span class="enc-gym"><strong>85 Gyms - 750 ofertas</strong></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padL20 padR25">
+                <p class="text-justify ">
+                    {{textGym | characters: textLength : false}}
+                    <span ng-click="changeTextLong()" class="read">{{textMoreBtn}}</span>
+                </p>
+
+            </div>
+
+            <div id="div-slides" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padL5 padR7" style="">
+
+            </div>
+
+            <div class="row col-sm-12 col-md-12 col-sm-12 col-xs-12  text-center padLR0 marLR footer-container">
+
+                <div class="col-sm-2 col-lg-2 col-md-2 col-xs-2 padLR0">
+                    <a class="logo-foo" ui-sref="frontend"><img class="logo-foo" src="img/logo_temp.png" style=""></a>
+                </div>
+                <div class="col-sm-10 col-lg-10 col-md-10 col-xs-10 padLR0">
+                    <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 padT15 text-center">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="nuestra-mision">Nuestra misi&oacute;n</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 padT15 text-center">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="preguntas-frecuentes">Preguntas frecuentes</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 padT15 text-center">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="politica-de-privacidad">Pol&iacute;tica de privacidad</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 padLR0 text-left ">
+            <span class="footer-link" ng-class="route == 'login' ? 'selected' : ''"
+                  ui-sref="condiciones-generales-de-contratacion">Condiciones generales &nbspde contrataci&oacute;n</span>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        </div>
+
+
+    </div>
+    <div class="col-lg-5 col-lg-5 col-md-5 col-xs-5 map-city padL0">
+        <div id="map-city" class="" style="width: 100%;height: 100%"></div>
+    </div>
+</div>
